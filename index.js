@@ -1,11 +1,12 @@
 import {Server} from 'node:http';
 import {readFileSync} from 'node:fs';
+import { join } from 'path';
 const serve = new Server();
 serve.on('request', (req, res) => {
   res.writeHead(200, {
    'content-type': 'text/html;charset=utf-8'
   });
-  res.end(readFileSync('./public/index.html', 'utf8'));
+  res.end(readFileSync(join(process.cwd(),'public','index.html'), 'utf8'));
 });
 serve.listen(8000);
 
