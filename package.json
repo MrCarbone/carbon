@@ -11,8 +11,5 @@
   },
   "devDependencies": {
     "@types/node": "latest"
-  },
-  "dependencies": {
-    "express": "^5.1.0"
   }
 }
