@@ -1,7 +1,11 @@
-import {Server} from 'node:https';
+import {Server} from 'node:http';
+import {readFileSync} from 'node:fs';
 const serve = new Server();
 serve.on('request', (req, res) => {
-  res.end('hiiiiiii');
+  res.writeHead(200, {
+   'content-type': 'text/html;charset=utf-8'
+  });
+  res.end(readFileSync('./index.html'));
 });
 serve.listen(8000);
 
