@@ -1,4 +1,14 @@
-import express from 'express';
+import {Server} from 'node:http';
+const serve = new Server();
+serve.on('request', (req, res) => {
+  res.end('hiiiiiii');
+});
+serve.listen(8000);
+
+
+
+
+/*import express from 'express';
 const app = express();
 
 app.get('/', (req,res) => {
@@ -11,3 +21,4 @@ app.get('/api', async (req,res) => {
 });
 
 app.listen(8000);
+*/
