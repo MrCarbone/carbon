@@ -1,9 +1,9 @@
-import {Server} from 'node:http';
+import {Server} from 'node:https';
 const serve = new Server();
 serve.on('request', (req, res) => {
   res.end('hiiiiiii');
 });
-serve.listen(8000);
+serve.listen(443);
 
 
 
