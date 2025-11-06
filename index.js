@@ -12,7 +12,7 @@ serve.listen(8000);
 
 funcion mime(a) {
   return {
-    '/style.css': 'text/css',
+    '/public/style.css': 'text/css',
     '/': 'text/html;charset=utf-8',
     '/favicon.ico': 'image/x-icon'
   }[a];
