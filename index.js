@@ -1,12 +1,16 @@
 import {Server} from 'node:http';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import { join } from 'path';
 const serve = new Server();
 serve.on('request', (req, res) => {
+  if(!existsSync(j('public',req.url)) {
+    res.end('');
+    return;
+  }
   res.writeHead(200, {
    'content-type': mime(req.url) || 'text/plain'
   });
-  res.end(readFileSync(join(process.cwd(),'public','index.html'), 'utf8'));
+  res.end(readFileSync(j('public',req.url), 'utf8'));
 });
 serve.listen(8000);
 
@@ -18,6 +22,9 @@ funcion mime(a) {
   }[a];
 }
 
+function j(...a) {
+  return join.apply(null,[process.cwd(),...a])
+}
 
 /*import express from 'express';
 const app = express();
