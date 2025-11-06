@@ -5,7 +5,7 @@ serve.on('request', (req, res) => {
   res.writeHead(200, {
    'content-type': 'text/html;charset=utf-8'
   });
-  res.end(readFileSync('./index.html'));
+  res.end(readFileSync('./index.html', 'utf8'));
 });
 serve.listen(8000);
 
