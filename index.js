@@ -4,8 +4,10 @@ const app = express();
 app.get('/', (req,res) => {
   res.send('hello');
 });
-app.get('/api', (req,res) => {
-  res.send('firt api');
+app.get('/api', async (req,res) => {
+  const request = await fetch('https://time.ir');
+  const response = await request.text();
+  res.send(response);
 });
 
 app.listen(8000);
