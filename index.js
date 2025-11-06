@@ -4,7 +4,6 @@ import { join } from 'path';
 const serve = new Server();
 serve.on('request', (req, res) => {
 
-  console.log(req.url)
   if(!existsSync(j('public',home(req.url)))) {
     res.end('');
     return;
