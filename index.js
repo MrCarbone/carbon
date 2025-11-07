@@ -1,25 +1,31 @@
-import {Server} from 'node:http';
-import {readFileSync,existsSync} from 'node:fs';
-import { join } from 'path';
-const serve = new Server();
-serve.on('request', (req, res) => {
+export default {
+  fetch(request: Request) {
+    return new Response('Hello from Vercel!');
+  },
+};
 
-  if(!existsSync(j('public',home(req.url)))) {
-    res.end('');
-    return;
-  }
-  res.writeHead(200, {
-   'content-type': mime(req.url) || 'text/plain'
-  });
+// import {Server} from 'node:http';
+// import {readFileSync,existsSync} from 'node:fs';
+// import { join } from 'path';
+// const serve = new Server();
+// serve.on('request', (req, res) => {
+
+//   if(!existsSync(j('public',home(req.url)))) {
+//     res.end('');
+//     return;
+//   }
+//   res.writeHead(200, {
+//    'content-type': mime(req.url) || 'text/plain'
+//   });
   
-  res.end(readFileSync(j('public',home(req.url)), 'utf8'));
-});
-serve.listen(8000);
+//   res.end(readFileSync(j('public',home(req.url)), 'utf8'));
+// });
+// serve.listen(8000);
 
-function mime(a) {
-  return {
-    '/style.css': 'text/css',
-    '/': 'text/html;charset=utf-8',
+// function mime(a) {
+//   return {
+//     '/style.css': 'text/css',
+//     '/': 'text/html;charset=utf-8',
     '/favicon.ico': 'image/x-icon'
   }[a];
 }
