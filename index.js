@@ -26,14 +26,14 @@ export default {
 //   return {
 //     '/style.css': 'text/css',
 //     '/': 'text/html;charset=utf-8',
-    '/favicon.ico': 'image/x-icon'
-  }[a];
-}
+//     '/favicon.ico': 'image/x-icon'
+//   }[a];
+// }
 
-function j(...a) {
-  return join.apply(null,[process.cwd(),...a])
-}
+// function j(...a) {
+//   return join.apply(null,[process.cwd(),...a])
+// }
 
-function home(a) {
-  return a==='/'?'/index.html':a;
-}
+// function home(a) {
+//   return a==='/'?'/index.html':a;
+// }
